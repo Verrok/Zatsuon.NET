@@ -7,7 +7,7 @@ namespace Zatsuon.NET;
 
 public interface IRandomOrgClient
 {
-    public INumberGenerator Integer { get; }
+    public INumberGenerator Number { get; }
     public IStringGenerator String { get; }
     
     public IBlobGenerator Blob { get; }

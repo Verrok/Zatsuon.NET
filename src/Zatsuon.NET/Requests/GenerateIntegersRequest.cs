@@ -5,12 +5,6 @@ namespace Zatsuon.NET.Requests;
 public record GenerateIntegersRequest: RequestInfo
 {
     /// <summary>
-    /// How many random integers you need. Must be within the <b>[1,1e4]</b> range.
-    /// </summary>
-    [JsonPropertyName("n")]
-    public int Amount { get; init; }
-    
-    /// <summary>
     /// The lower boundary for the range from which the random numbers will be picked. Must be within the <b>[-1e9,1e9]</b> range.
     /// </summary>
     public int Min { get; init; }

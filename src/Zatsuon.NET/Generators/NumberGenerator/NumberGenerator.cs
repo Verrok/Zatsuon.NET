@@ -29,11 +29,22 @@ public class NumberGenerator: GeneratorBase, INumberGenerator
 
         var restRequest = InitRestRequest(data);
         var response = await RestClient.ExecuteAsync(restRequest);
-        Console.WriteLine(response.Content);
         return JsonSerializer.Deserialize<GenerateIntegerSequencesResponse>(response.Content!, new JsonSerializerOptions()
         {
             PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
             Converters = { new IntConverter(request.Base) }
+        })!;
+    }
+
+    public async Task<GenerateDecimalFractionsResponse> GenerateDecimalFractions(GenerateDecimalFractionsRequest request)
+    {
+        var data = InitRequest("generateDecimalFractions", ApiKey, request);
+
+        var restRequest = InitRestRequest(data);
+        var response = await RestClient.ExecuteAsync(restRequest);
+        return JsonSerializer.Deserialize<GenerateDecimalFractionsResponse>(response.Content!, new JsonSerializerOptions()
+        {
+            PropertyNamingPolicy = JsonNamingPolicy.CamelCase
         })!;
     }
 }

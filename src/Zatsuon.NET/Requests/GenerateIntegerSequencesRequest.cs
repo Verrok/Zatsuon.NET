@@ -4,9 +4,6 @@ namespace Zatsuon.NET.Requests;
 
 public record GenerateIntegerSequencesRequest: RequestInfo
 {
-    [JsonPropertyName("n")]
-    public int Amount { get; init; }
-    
     public int[] Length { get; init; }
     public int[] Min { get; init; }
     public int[] Max { get; init; }
