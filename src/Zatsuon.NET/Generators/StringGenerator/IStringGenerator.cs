@@ -6,4 +6,5 @@ namespace Zatsuon.NET.Generators.StringGenerator;
 public interface IStringGenerator
 {
     public Task<GenerateStringsResponse> GenerateStrings(GenerateStringsRequest request);
+    public Task<GenerateUUIDsResponse> GenerateUUIDs(GenerateUUIDsRequest request);
 }

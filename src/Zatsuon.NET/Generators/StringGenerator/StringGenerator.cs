@@ -45,9 +45,16 @@ public class StringGenerator: GeneratorBase, IStringGenerator
     public async Task<GenerateStringsResponse> GenerateStrings(GenerateStringsRequest request)
     {
         var data = InitRequest(JsonNamingPolicy.CamelCase.ConvertName(nameof(GenerateStrings)), ApiKey, request);
-
         var restRequest = InitRestRequest(data);
         var response = await RestClient.ExecuteAsync(restRequest);
         return JsonSerializer.Deserialize<GenerateStringsResponse>(response.Content!, Options)!;
+    }
+
+    public async Task<GenerateUUIDsResponse> GenerateUUIDs(GenerateUUIDsRequest request)
+    {
+        var data = InitRequest(JsonNamingPolicy.CamelCase.ConvertName(nameof(GenerateUUIDs)), ApiKey, request);
+        var restRequest = InitRestRequest(data);
+        var response = await RestClient.ExecuteAsync(restRequest);
+        return JsonSerializer.Deserialize<GenerateUUIDsResponse>(response.Content!, Options)!;
     }
 }
