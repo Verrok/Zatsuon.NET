@@ -6,6 +6,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{1A1F9BA5
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zatsuon.NET", "src\Zatsuon.NET\Zatsuon.NET.csproj", "{A5F64C77-3D00-4B16-8E7A-59DA8A81DD27}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console", "src\Console\Console.csproj", "{E371C6E6-EACA-49FF-BED5-8988CAC575AB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -16,8 +18,13 @@ Global
 		{A5F64C77-3D00-4B16-8E7A-59DA8A81DD27}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5F64C77-3D00-4B16-8E7A-59DA8A81DD27}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5F64C77-3D00-4B16-8E7A-59DA8A81DD27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E371C6E6-EACA-49FF-BED5-8988CAC575AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E371C6E6-EACA-49FF-BED5-8988CAC575AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E371C6E6-EACA-49FF-BED5-8988CAC575AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E371C6E6-EACA-49FF-BED5-8988CAC575AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{A5F64C77-3D00-4B16-8E7A-59DA8A81DD27} = {CEF553BB-0D52-48C5-99CD-C5CEB3E4BD10}
+		{E371C6E6-EACA-49FF-BED5-8988CAC575AB} = {CEF553BB-0D52-48C5-99CD-C5CEB3E4BD10}
 	EndGlobalSection
 EndGlobal
