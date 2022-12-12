@@ -8,7 +8,7 @@ public abstract class GeneratorBase
 {
     protected readonly RestClient RestClient;
     protected readonly string ApiKey;
-    private readonly JsonSerializerOptions _options = new()
+    protected readonly JsonSerializerOptions Options = new()
     {
         PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
     };
@@ -41,8 +41,8 @@ public abstract class GeneratorBase
         {
             Method = Method.Post
         };
-        Console.WriteLine(JsonSerializer.Serialize(req, _options));
-        restRequest.AddBody(JsonSerializer.Serialize(req, _options), "application/json");
+        Console.WriteLine(JsonSerializer.Serialize(req, Options));
+        restRequest.AddBody(JsonSerializer.Serialize(req, Options), "application/json");
         return restRequest;
     }
 }
