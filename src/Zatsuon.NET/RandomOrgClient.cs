@@ -12,7 +12,7 @@ public class RandomOrgClient: IRandomOrgClient
 {
     public INumberGenerator Number { get; }
     public IStringGenerator String { get; } 
-    public IBlobGenerator Blob { get; } = new BlobGenerator();
+    public IBlobGenerator Blob { get; }
     public IUsageGenerator Usage { get; } = new UsageGenerator();
 
     private readonly string _apiKey;
@@ -27,6 +27,7 @@ public class RandomOrgClient: IRandomOrgClient
 
         Number = new NumberGenerator(_restClient, _apiKey);
         String = new StringGenerator(_restClient, _apiKey);
+        Blob = new BlobGenerator(_restClient, _apiKey);
     }
     
 }
