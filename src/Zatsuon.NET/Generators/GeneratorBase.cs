@@ -20,7 +20,7 @@ public abstract class GeneratorBase
         RestClient = client;
         ApiKey = apiKey;
     }
-    protected RequestBase<T> InitRequest<T>(string methodName, string apiKey, T req) where T: RequestInfo 
+    protected RequestBase<T> InitRequest<T>(string methodName, string apiKey, T req) where T: RequestInfo
     {
         var request = new RequestBase<T>
         {
@@ -34,6 +34,22 @@ public abstract class GeneratorBase
 
         return request;
     }
+    
+    protected RequestBase InitOnlyKeyRequest(string methodName, string apiKey)
+    {
+        var request = new RequestBase
+        {
+            JsonRpc = Consts.JsonRpcVersion,
+            Id = _rnd.Next(1, 10000),
+            Method = methodName,
+            Params = new ApiKeyInfo()
+            {
+                ApiKey = apiKey
+            }
+        };
+
+        return request;
+    }
 
     protected RestRequest InitRestRequest<T>(T req)
     {
@@ -41,7 +57,6 @@ public abstract class GeneratorBase
         {
             Method = Method.Post
         };
-        Console.WriteLine(JsonSerializer.Serialize(req, Options));
         restRequest.AddBody(JsonSerializer.Serialize(req, Options), "application/json");
         return restRequest;
     }

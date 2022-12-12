@@ -13,7 +13,7 @@ public class RandomOrgClient: IRandomOrgClient
     public INumberGenerator Number { get; }
     public IStringGenerator String { get; } 
     public IBlobGenerator Blob { get; }
-    public IUsageGenerator Usage { get; } = new UsageGenerator();
+    public IUsageGenerator Usage { get; }
 
     private readonly string _apiKey;
     private readonly string _requestUrl = "https://api.random.org/json-rpc/4/invoke";
@@ -28,6 +28,7 @@ public class RandomOrgClient: IRandomOrgClient
         Number = new NumberGenerator(_restClient, _apiKey);
         String = new StringGenerator(_restClient, _apiKey);
         Blob = new BlobGenerator(_restClient, _apiKey);
+        Usage = new UsageGenerator(_restClient, _apiKey);
     }
     
 }
