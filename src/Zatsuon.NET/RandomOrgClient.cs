@@ -11,7 +11,7 @@ namespace Zatsuon.NET;
 public class RandomOrgClient: IRandomOrgClient
 {
     public INumberGenerator Number { get; }
-    public IStringGenerator String { get; } = new StringGenerator();
+    public IStringGenerator String { get; } 
     public IBlobGenerator Blob { get; } = new BlobGenerator();
     public IUsageGenerator Usage { get; } = new UsageGenerator();
 
@@ -26,6 +26,7 @@ public class RandomOrgClient: IRandomOrgClient
         _restClient = new RestClient(client ?? new HttpClient(), new RestClientOptions(_requestUrl));
 
         Number = new NumberGenerator(_restClient, _apiKey);
+        String = new StringGenerator(_restClient, _apiKey);
     }
     
 }
